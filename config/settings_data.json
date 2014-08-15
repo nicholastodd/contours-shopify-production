@@ -33,10 +33,10 @@
       "color_secondary": "#464646",
       "customer_layout": "theme",
       "footer_display_newsletter": true,
-      "footer_display_quicklinks": true,
+      "footer_display_quicklinks": false,
       "footer_display_social": true,
       "footer_quicklinks_linklist": "footer",
-      "logo_max_width": "450px",
+      "logo_max_width": "278px",
       "logo_use_image": false
     }
   }
