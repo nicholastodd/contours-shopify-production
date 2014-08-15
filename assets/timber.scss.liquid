@@ -121,7 +121,7 @@ $errorRedBg: lighten($errorRed, 55%);
 $successGreen: #0a942a;
 
 // Width variables
-$siteWidth: 1180px;
+$siteWidth: 1400px;
 $gutter: 24px;
 $gridGutter: 24px; // can be a %, but nested grids will have smaller margins because of it
 
@@ -1582,8 +1582,9 @@ label.error {
   #Site Header
 ==============================================================================*/
 .site-header {
-  padding: 0;
+  padding: 10px;
   background-color: $colorNav;
+  vertical-align: middle;
 
   @include at-query ($min, $large) {
     padding: $gutter 0;
@@ -1644,8 +1645,18 @@ label.error {
 ==============================================================================*/
 .nav-bar {
   background-color: $colorNav;
-  padding: 0 40px;
   vertical-align: middle;
+  width:100%;
+  top:0;
+
+  .cart {
+  vertical-align: middle;
+  float: right;
+  }
+
+    img.logo {
+    float: left;
+    }
 
   a {
     color: $colorNavText;
@@ -1657,13 +1668,14 @@ label.error {
     }
   }
 
-  .img {
-    float: right;
+  .img.logo {
+    float: left;
   }
 
   ul {
     float: right;
-    margin: 0;
+    vertical-align: middle;
+    margin-bottom: 0;
   }
 
   li {
@@ -1674,6 +1686,8 @@ label.error {
 .site-nav {
   font-size: 1.2em;
   cursor: default;
+  vertical-align: middle;
+  float: right;
 
   li {
     margin: 0;

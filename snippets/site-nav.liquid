@@ -1,39 +1,10 @@
-<img class="logo" src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
 <ul class="site-nav" id="accessibleNav">
   <li><a href="#why">Buy</a></li>
   <li><a href="#">Benefits</a></li>
   <li><a href="#">About</a></li>
   <li><a href="#">FAQ</a></li>
   <li><a href="#">Contact</a></li>
-  <li>
-    {% comment %}
-      You cart/checkout link should at least show the number of items in it.
-      Below shows the item count followed by item(s) and the total cart price.
-
-      Ajaxify Cart Notes:
-        - #cartToggle toggles cart visibility (drawer or modal)
-        - #cartCount updates the total number of items in the cart
-        - #cartCost updates the total cost of the cart
-        - Documentation:  http://shopify.com/timber#ajax-cart
-    {% endcomment %}
-    <a href="/cart" id="cartToggle">
-      Cart (<span id="cartCount">{{ cart.item_count }}</span> {{ cart.item_count | pluralize: 'item', 'items' }} <span id="cartCost">{{ cart.total_price | money }}</span>)
-    </a>
-
-    {% comment %}
-      If customer accounts are enabled, provide login and create account links
-    {% endcomment %}
-    {% if shop.customer_accounts_enabled %}
-    <p class="site-header--text-links">
-      {% if customer %}
-        Logged in as <a href="/account">{{ customer.first_name }}</a> &middot; {{ 'Log out' | customer_logout_link }}
-      {% else %}
-        {{ 'Log in' | customer_login_link }}
-        {% if shop.customer_accounts_optional %}
-        or {{ 'Create an account' | customer_register_link }}
-        {% endif %}
-      {% endif %}
-    </p>
-    {% endif %}
-  </li>
+  <li><a href="/cart" id="cartToggle">
+    Cart (<span id="cartCount">{{ cart.item_count }}</span> {{ cart.item_count | pluralize: 'item', 'items' }} <span id="cartCost">{{ cart.total_price | money }}</span>)
+  </a></li>
 </ul>
