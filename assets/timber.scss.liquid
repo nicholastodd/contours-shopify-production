@@ -715,6 +715,7 @@ select {
   -webkit-text-size-adjust: 100%;
 }
 
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   display: block;
@@ -1581,7 +1582,8 @@ label.error {
   #Site Header
 ==============================================================================*/
 .site-header {
-  padding: $gutter/2 0;
+  padding: 0;
+  background-color: $colorNav;
 
   @include at-query ($min, $large) {
     padding: $gutter 0;
@@ -1642,6 +1644,8 @@ label.error {
 ==============================================================================*/
 .nav-bar {
   background-color: $colorNav;
+  padding: 0 40px;
+  vertical-align: middle;
 
   a {
     color: $colorNavText;
@@ -1653,7 +1657,12 @@ label.error {
     }
   }
 
+  .img {
+    float: right;
+  }
+
   ul {
+    float: right;
     margin: 0;
   }
 
