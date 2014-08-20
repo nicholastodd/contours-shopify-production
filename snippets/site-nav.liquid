@@ -5,7 +5,7 @@
     - http://docs.shopify.com/themes/liquid-variables/linklists
 {% endcomment %}
 <ul class="site-nav" id="accessibleNav">
-  {% for link in linklists.main-menu.links %}
+  {% for link in linklists.top-nav.links %}
     {% comment %}
       Create a dropdown menu by naming a linklist the same as a link in the parent nav
 
@@ -28,4 +28,10 @@
       </li>
     {% endif %}
   {% endfor %}
+  <li class="cart">
+  <a href="/cart" id="cartToggle">
+    Cart (<span id="cartCount">{{ cart.item_count }}</span> {{ cart.item_count | pluralize: 'item', 'items' }} <span id="cartCost">{{ cart.total_price | money }}</span>)
+  </a>
+  </li>
+
 </ul>

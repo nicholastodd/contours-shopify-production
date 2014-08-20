@@ -95,7 +95,7 @@ $colorBtnSecondaryActive: darken($colorBtnSecondaryHover, 10%);
 
 // Text link colors
 $colorLink: $colorPrimary;
-$colorLinkHover: #333;
+$colorLinkHover: #1f1f1f;
 
 // Text colors
 $colorBody: #fff;
@@ -106,8 +106,8 @@ $colorHeaders: #999;
 $borderColor: #e5e5e5;
 
 // Nav and dropdown link background
-$colorNav: #f2f2f2;
-$colorNavText: #333;
+$colorNav: #ebebeb;
+$colorNavText: #464646;
 $colorNavBG: #ebebeb;
 
 // Footer
@@ -1582,7 +1582,8 @@ label.error {
   #Site Header
 ==============================================================================*/
 .site-header {
-  padding: $gutter/2 0;
+  padding: 0 0;
+  background-color: $colorNavBG;
 
   @include at-query ($min, $large) {
     padding: $gutter 0;
