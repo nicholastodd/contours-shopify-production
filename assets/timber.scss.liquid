@@ -108,6 +108,7 @@ $borderColor: #e5e5e5;
 // Nav and dropdown link background
 $colorNav: #f2f2f2;
 $colorNavText: #333;
+$colorNavBG: #ebebeb;
 
 // Footer
 $colorFooterBg: {{ settings.color_footer_bg }};
@@ -121,7 +122,7 @@ $errorRedBg: lighten($errorRed, 55%);
 $successGreen: #0a942a;
 
 // Width variables
-$siteWidth: 1400px;
+$siteWidth: 1180px;
 $gutter: 24px;
 $gridGutter: 24px; // can be a %, but nested grids will have smaller margins because of it
 
@@ -667,7 +668,6 @@ body {
   max-width: $siteWidth;
   margin: 0 auto;
   padding: 0 $gutter/2;
-  z-index: 2;
 
   @include at-query ($min, $small) {
     padding: 0 $gutter;
@@ -715,7 +715,6 @@ select {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
 }
-
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -1583,13 +1582,7 @@ label.error {
   #Site Header
 ==============================================================================*/
 .site-header {
-  padding: 10px;
-  background-color: $colorNav;
-  vertical-align: middle;
-  top: 0;
-  position: fixed;
-  z-index: 10;
-  width: 100%;
+  padding: $gutter/2 0;
 
   @include at-query ($min, $large) {
     padding: $gutter 0;
@@ -1650,18 +1643,6 @@ label.error {
 ==============================================================================*/
 .nav-bar {
   background-color: $colorNav;
-  vertical-align: middle;
-  width:100%;
-  top:0;
-
-  .cart {
-  vertical-align: middle;
-  float: right;
-  }
-
-    img.logo {
-    float: left;
-    }
 
   a {
     color: $colorNavText;
@@ -1673,14 +1654,8 @@ label.error {
     }
   }
 
-  .img.logo {
-    float: left;
-  }
-
   ul {
-    float: right;
-    vertical-align: middle;
-    margin-bottom: 0;
+    margin: 0;
   }
 
   li {
@@ -1691,8 +1666,6 @@ label.error {
 .site-nav {
   font-size: 1.2em;
   cursor: default;
-  vertical-align: middle;
-  float: right;
 
   li {
     margin: 0;
@@ -1985,50 +1958,4 @@ label.error {
   color: #aaa;
   font-size: 0.875em;
   text-decoration: none;
-}
-
-/*============================================================================
-  #User Homepage Styles - Hero area
-==============================================================================*/
-
-.crx-hero-container {
-  background-image:url(//cdn.shopify.com/s/files/1/0578/9473/files/contoursrx-hero_2048x2048.jpg?7331);
-  background-size: cover;
-  z-index: -100;
-  overflow: hidden;
-  /* The following styles are required for the "scroll-over" effect */
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  position: fixed !important;
-}
-
-.crx-hero {
-  /* absolute center .splash within .splash-container */
-  float:left;
-  position: absolute;
-  padding-right:20px;
-  top: 45%; left: 10%; bottom: 0; right: 0;
-  text-align: left;
-}
-
-h1.crx-hero-head {
-    font-size: 24px;
-    color: white;
-    font-weight: 100;
-    line-height: 1.4em;
-}
-
-.tiffany-blue {
-  background: #abeadf;
-}
-
-.crx-product {
-  /* These styles are required for the "scroll-over" effect */
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    padding-top:50px;
-    min-height: 40%;
-    z-index: 2;
 }
