@@ -4,7 +4,7 @@
     {% assign child_list_handle = link.title | handleize %}
     {% if linklists[child_list_handle].links != blank %}
       <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" aria-haspopup="true">
-        <a class="anchor " id="top" href="{{ link.url }}">{{ link.title }}</a>
+        <a class="white" id="top" href="{{ link.url }}">{{ link.title }}</a>
         <ul class="site-nav--dropdown">
           {% for childlink in linklists[child_list_handle].links %}
             <li {% if childlink.active %}class="site-nav--active"{% endif %}><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
@@ -13,15 +13,13 @@
       </li>
     {% else %}
       <li {% if link.active %}class="site-nav--active"{% endif %}>
-        <a href="{{ link.url }}">{{ link.title }}</a>
+        <a class="white" id="top" href="{{ link.url }}">{{ link.title }}</a>
       </li>
     {% endif %}
   {% endfor %}
   <li class="cart">
-    <p class="site-header--text-links">
-      <a href="/cart" id="cartToggle">
+      <a class="white" href="/cart" id="cartToggle">
         Cart (<span id="cartCount">{{ cart.item_count }}</span> {{ cart.item_count | pluralize: 'item', 'items' }} <span id="cartCost">{{ cart.total_price | money }}</span>)
       </a>
-    </p>
   </li>
 </ul>
