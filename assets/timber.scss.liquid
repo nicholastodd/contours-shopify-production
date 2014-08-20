@@ -312,7 +312,7 @@ $class-type: unquote(".");
 #{$class-type}grid-item {
   float: left;
   min-height: 1px;
-  padding-left:$gridGutter;
+  padding: 10px;
   vertical-align:top;
   @if $mobile-first == true {
     width:100%;
@@ -800,9 +800,10 @@ hr {
 
 /*================ Section Headers ================*/
 .section-header {
-  margin: $gutter/2 auto;
+  margin: $gutter auto;
   font-size:24px;
   letterspacing:1px;
+
 }
 
 @include at-query ($min, $large) {
@@ -2003,7 +2004,7 @@ label.error {
 .benefits {
   background-color: $colorNavBG;
   width: 100%;
-  padding: 80px 0;
+  padding: 60px 0 80px 0;
   margin: 0 auto;
 }
 
@@ -2011,6 +2012,35 @@ label.error {
 .how-to {
   background-color: #fff;
   width: 100%;
-  padding: 80px 0;
+  padding: 60px 0 80px 0;
   margin: 0 auto;
+}
+
+.proof-copy {
+
+}
+
+.proof-head {
+  font-size: 30px;
+  font-family: san-serif;
+  color: #414141;
+
+}
+
+/* Links */
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
+
+  a.white {
+   color: rgba(70, 70, 70, 1);
+   text-decoration: none;
+   text-transform: none;
+   font-family: "mf-qubo-241622";
+   line-height: 24px;
+}
+
 }
